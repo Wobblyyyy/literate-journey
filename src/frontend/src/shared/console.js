@@ -4,16 +4,6 @@
  */
 
 /*
- * This file is a part of the achat project's source code.
- * Everything here is under the MIT source code license.
- */
-
-/*
- * This file is a part of the achat project's source code.
- * Everything here is under the MIT source code license.
- */
-
-/*
  * A custom implementation of a console to use with achat.
  * You can use this in any custom plugins or bots you may append
  * to achat's functionality. Note that you'd probably be better off if you
