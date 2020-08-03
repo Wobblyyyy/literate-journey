@@ -4,16 +4,6 @@
  */
 
 /*
- * This file is a part of the achat project's source code.
- * Everything here is under the MIT source code license.
- */
-
-/*
- * This file is a part of the achat project's source code.
- * Everything here is under the MIT source code license.
- */
-
-/*
  * In order to combat issues I was having before with color codes in achat,
  * I created this file to simplify the creation of color-coded messages.
  */

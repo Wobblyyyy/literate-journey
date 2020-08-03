@@ -4,16 +4,6 @@
  */
 
 /*
- * This file is a part of the achat project's source code.
- * Everything here is under the MIT source code license.
- */
-
-/*
- * This file is a part of the achat project's source code.
- * Everything here is under the MIT source code license.
- */
-
-/*
  * To simplify the process of switching languages while using achat, we use a
  * nice, simple, little, and of course, sexy, file containing all of the
  * messages we will need anywhere. We use a messages file to make it so you can
