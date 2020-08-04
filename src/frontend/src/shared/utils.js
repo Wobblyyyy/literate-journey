@@ -15,3 +15,10 @@ function forEachArray(array, callback) {
         callback(value, index);
     });
 }
+
+function replaceAll(string, search, replace) {
+    while (string.includes(search)) {
+        string = string.replace(search, replace);
+    }
+    return string;
+}

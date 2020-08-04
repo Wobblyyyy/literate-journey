@@ -13,6 +13,23 @@
  * In order to create a fluid experience, we want to have a ticking system which
  * will periodically check to see if all of the language messages should be
  * updated.
+ * Translations are more than welcome! As of now, our plans for language
+ * implementation includes...
+ *  - English (of course) (EN)
+ *  - Evanerarien (my own language) (EV)
+ *  - Spanish (it's pretty commonly spoken) (ES)
+ *  - Italian (it's also pretty commonly spoken) (IT) ?
+ * However, if you just so happen to know a language other than any of the
+ * languages included on this list, you can feel free to add it!
+ * In order to add a language, you just have to follow a few steps...
+ *  - Copy-paste _EN and rename EN to whatever language code you'd like to
+ *      use. EN is obviously English. If you don't know the language code of
+ *      a language you speak you can just look it up.
+ *  - Translate all of the messages. I would strongly prefer you to be
+ *      fluent in the language you're translating, for pretty obvious reasons.
+ *  - Submit a pull request on GitHub. I'll handle the rest from there.
+ * If you'd like to improve existing translations, you can follow the same
+ * steps as above, without copying the messages.
  */
 
 const Messages = {
@@ -43,6 +60,8 @@ const Messages = {
                 'add me on discord (wobblyyyy#6733).'
         },
         shared: {
+            lang_title: 'English',
+            lang: 'Language',
             achat: 'achat',
             sign_up: 'create a new account',
             sign_in: 'log into an already existing account',
@@ -51,7 +70,10 @@ const Messages = {
                 'now with extra splash screen messages!',
                 'look at that sexy background... damn...',
                 'does anybody even read these?',
-                'made with much love <3:)'
+                'made with much love &c<3&4:)',
+                'check out the extensions and mods marketplace!',
+                'if you know how to code, you can feel free to join in and ' +
+                    'help out with the development of achat!'
             ]
         },
         authentication: {
@@ -63,7 +85,16 @@ const Messages = {
                 female: 'female',
                 nonbinary: 'non-binary',
                 other: 'other'
-            }
+            },
+            signed_in: 'you\'ve signed in!',
+            signed_out: 'you\'ve signed out.',
+            signed_up: 'you\'ve created an account.',
+            could_not_sign_in: 'there was an error while signing in - ' +
+                '_ERROR_CODE_',
+            could_not_sign_up: 'there was an error while signing up - ' +
+                '_ERROR_CODE_',
+            could_not_sign_out: 'there was an error while signing out - ' +
+                '_ERROR_CODE_'
         }
     }
 };

@@ -10,6 +10,16 @@
  * just use achat chat's built-in logging system. Probably.
  */
 
+//----------------------------------------------------------------------------//
+// USING THIS AS A DEVELOPER                                                  //
+// achat has a development console which is available with the command        //
+// /console while using the regular chat bar.                                 //
+//----------------------------------------------------------------------------//
+// WRITING TO CONSOLE                                                         //
+//----------------------------------------------------------------------------//
+// READING FROM THE CONSOLE                                                   //
+//----------------------------------------------------------------------------//
+
 let Console = {
     console: [],
     write: function (prefix, msg) {

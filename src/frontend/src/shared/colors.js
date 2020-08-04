@@ -8,6 +8,26 @@
  * I created this file to simplify the creation of color-coded messages.
  */
 
+//----------------------------------------------------------------------------//
+// USING THIS AS A DEVELOPER                                                  //
+// As you could probably guess, color codes and different colored fonts are   //
+// incredibly important in a text-based program such as achat. Because all of //
+// achat's internal workings and components are laid bare for anybody to see  //
+// (and in this case, use), I'm providing this handy-dandy guide to using     //
+// all of this stuff in your own mods and plugins.                            //
+//----------------------------------------------------------------------------//
+// USING COLOR CODES                                                          //
+// All of the color codes are quite nicely listed in the Colors.colorCodes    //
+// section of this document. Assuming you already know how to use the color   //
+// codes to do swaggy and epic stuff with them, we move now move on...        //
+//----------------------------------------------------------------------------//
+// CONVERTING COLOR-CODED MESSAGES TO USABLE MESSAGES                         //
+// To put it simply, you use Colors.convert(message) to convert a color-coded //
+// message into a regular one. Note that the output message is written in     //
+// HTML markup form and should be used in that way. I utilize SPAN elements   //
+// to make all of this magic happen.                                          //
+//----------------------------------------------------------------------------//
+
 // We might have to implement these at some other point. Oh well.
 const Codes = {
     REGULAR: [],
@@ -36,49 +56,52 @@ let Colors = {
         // Look up Minecraft color codes if you (for whatever reason) want
         // to figure out how to use them.
         // You could also use regular color codes... like a normal person...
-        // Or these!
-        '&r': '#000000',
-        '&0': '#000000',
-        '&1': '#0000AA',
-        '&2': '#00AA00',
-        '&3': '#00AAAA',
-        '&4': '#AA0000',
-        '&5': '#AA00AA',
-        '&6': '#FFAA00',
-        '&7': '#AAAAAA',
-        '&8': '#555555',
-        '&9': '#5555FF',
-        '&a': '#55FF55',
-        '&b': '#55FFFF',
-        '&c': '#FF5555',
-        '&d': '#FF55FF',
-        '&e': '#FFFF55',
-        '&f': '#FFFFFF',
-
-        // achat's color codes
-        // Custom color codes. Some of these are the same exact colors as
-        // the Minecraft ones.
-        '[black]': '#000000',
-        '[white]': '#FFFFFF',
-        '[grey]': '#6e6e6e',
-        '[dark_grey]': '#555555',
-        '[light_grey]': '#AAAAAA',
-        '[green]': '#12b800',
-        '[light_green]': '#61ff4f',
-        '[dark_green]': '#0d8200',
-        '[blue]': '#2930ff',
-        '[light_blue]': '#666bff',
-        '[dark_blue]': '#0000AA',
-        '[red]': '#AA0000',
-        '[light_red]': '#FF5555',
-        '[dark_red]': '#9c0000',
-        '[purple]': '#9200db',
-        '[light_purple]': '#be3dff',
-        '[dark_purple]': '#5a0087',
-        '[cyan]': '#00AAAA',
-        '[yellow]': '#FFFF55',
-        '[orange]': '#FFAA00',
-        '[seafoam_green]': '#93E9BE',
+        // Or these!                  //--------------------------------------//
+        '&r': '#000000',              // BLACK                                //
+        '&0': '#000000',              // BLACK                                //
+        '&1': '#0000AA',              // DARK BLUE                            //
+        '&2': '#00AA00',              // DARK GREEN                           //
+        '&3': '#00AAAA',              // CYAN                                 //
+        '&4': '#AA0000',              // RED                                  //
+        '&5': '#AA00AA',              // PURPLE                               //
+        '&6': '#FFAA00',              // ORANGE                               //
+        '&7': '#AAAAAA',              // LIGHT GREY                           //
+        '&8': '#555555',              // DARK GREY                            //
+        '&9': '#5555FF',              // BLUE                                 //
+        '&a': '#55FF55',              // LIGHT GREEN                          //
+        '&b': '#55FFFF',              // LIGHT BLUE                           //
+        '&c': '#FF5555',              // LIGHT RED                            //
+        '&d': '#FF55FF',              // LIGHT PURPLE                         //
+        '&e': '#FFFF55',              // STRAIGHT-UP YELLOW                   //
+        '&f': '#FFFFFF',              // WHITE...                             //
+                                      //--------------------------------------//
+        // achat's color codes        // Man, I have to say, I really do like //
+        // Custom color codes. Some   // the way I formatted this. Who cares  //
+        // of these are the same      // about the code, the formatting       //
+        // exact colors as            // looks hella nice!                    //
+        // the Minecraft ones.        //--------------------------------------//
+        '[black]': '#000000',         // BLACK                                //
+        '[white]': '#FFFFFF',         // WHITE                                //
+        '[grey]': '#6e6e6e',          // GREY                                 //
+        '[dark_grey]': '#555555',     // DARK GREY                            //
+        '[light_grey]': '#AAAAAA',    // LIGHT GREY                           //
+        '[green]': '#12b800',         // GREEN                                //
+        '[light_green]': '#61ff4f',   // LIGHT GREEN                          //
+        '[dark_green]': '#0d8200',    // DARK GREEN                           //
+        '[blue]': '#2930ff',          // REGULAR BLUE                         //
+        '[light_blue]': '#666bff',    // LIGHT BLUE                           //
+        '[dark_blue]': '#0000AA',     // DARK BLUE                            //
+        '[red]': '#AA0000',           // RED                                  //
+        '[light_red]': '#FF5555',     // LIGHT RED                            //
+        '[dark_red]': '#9c0000',      // DARK RED                             //
+        '[purple]': '#9200db',        // REGULAR PURPLE                       //
+        '[light_purple]': '#be3dff',  // LIGHT PURPLE                         //
+        '[dark_purple]': '#5a0087',   // DARK PURPLE                          //
+        '[cyan]': '#00AAAA',          // CYAN                                 //
+        '[yellow]': '#FFFF55',        // YELLOW                               //
+        '[orange]': '#FFAA00',        // ORANGE                               //
+        '[seafoam_green]': '#93E9BE'  // SEAFOAM GREEN                        //
+                                      //--------------------------------------//
     },
     // We have to implement this at some later point.
     regularCodes: {
@@ -103,11 +126,19 @@ let Colors = {
     // so we do everything we can on the client. Note that we still have to
     // actually fix the message on the server, so the client can't just "nope"
     // right out of checks that make sure the messages are allowed.
+    // We gotta prime these sexy ass motherfucking messages for use anywhere
+    // within achat, including...
+    //  - Sending messages
+    //  - Switching language
+    //  - Preparing buttons to be displayed
     convert: function (message) {
         // Here we have a list of end tags we need to add to the end of the
         // string to make sure it won't mess up anything else on the site.
         // We append these to the end of the string in reverse order.
         let ending = [];
+        // We to see if the message contains any of the strings contained within
+        // the color codes section. If any of them are contained, we replace the
+        // color code and add the ending to the very back of the message.
         forEachJson(this.colorCodes, function (key, value) {
             while (message.includes(key)) {
                 ending.push(Colors.template[1]);
@@ -120,10 +151,14 @@ let Colors = {
                 );
             }
         });
+        // Reverse the ending so we can append it in the right order.
         ending.reverse();
+        // Add each of the endings to the message so it's entirely complete.
         forEachArray(ending, function (value, index) {
             message += value;
         });
-        return message;
+        // Return the entire message.
+        // We also format the message.
+        return replaceAll(message, '  ', ' ').trim();
     }
 };
