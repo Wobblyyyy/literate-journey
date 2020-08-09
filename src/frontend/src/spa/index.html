@@ -1,0 +1,42 @@
+<!--
+  ~ This file is a part of the achat project's source code.
+  ~ Everything here is under the MIT source code license.
+  -->
+
+<!--
+  ~ Here we have our single page application file!
+  ~ Previous versions of achat used multi-page applications. While that works
+  ~ and all, having everything neatly contained in one single page which
+  ~ uses a routing system to control what the user is seeing is very helpful.
+  ~ Even though it uses up a LOT more RAM (everything must stay loaded at all
+  ~ times) this also means that less server resources have to be used for all
+  ~ of achat to function as intended.
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>achat | 2020</title>
+
+    <!--
+      ~ Default include block. Everything here should be included in every HTML
+      ~ file (hopefully), assuming everything goes according to plan.
+      -->
+    <script src="../shared/score.js"></script>
+    <script src="../shared/colors.js"></script>
+    <script src="../shared/console.js"></script>
+    <script src="../shared/messages.js"></script>
+    <script src="../shared/utils.js"></script>
+</head>
+<body>
+<iframe sv="homepage"></iframe>
+<iframe sv="index"></iframe>
+<iframe sv="signin"></iframe>
+<iframe sv="signout"></iframe>
+<iframe sv="signup"></iframe>
+
+<script src="router.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

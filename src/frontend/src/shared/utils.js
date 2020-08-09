@@ -22,3 +22,11 @@ function replaceAll(string, search, replace) {
     }
     return string;
 }
+
+function getElement(id) {
+    return document.getElementById(id);
+}
+
+function getElements(className) {
+    return Array.from(document.getElementsByClassName(className));
+}

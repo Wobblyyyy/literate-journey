@@ -73,7 +73,7 @@ const Messages = {
                 'made with much love &c<3&4:)',
                 'check out the extensions and mods marketplace!',
                 'if you know how to code, you can feel free to join in and ' +
-                    'help out with the development of achat!'
+                'help out with the development of achat!'
             ]
         },
         authentication: {
